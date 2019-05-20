@@ -16,6 +16,10 @@ dependencies {
 
     // AndroidX
     api deps.jetpack.annotation
+
+    // Dependency Injection
+    api deps.app.koin
+    api deps.app.koinScope
 }
 
 /**

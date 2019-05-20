@@ -21,6 +21,9 @@ dependencies {
     // Image Renderer
     implementation deps.app.glide
 
+    // Dependency Injection
+    implementation deps.app.koinViewmodel
+
     // Annotation Processors
     kapt deps.kapt.lifecycle
     kapt deps.kapt.glide

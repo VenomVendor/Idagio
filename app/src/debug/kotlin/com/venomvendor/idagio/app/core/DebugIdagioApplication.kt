@@ -15,7 +15,16 @@ import android.annotation.SuppressLint
 @SuppressLint("Registered")
 class DebugIdagioApplication : IdagioApplication() {
 
-    override fun onCreate() {
-        super.onCreate()
-    }
+// TODO: Fix this org.koin.core.error.KoinAppAlreadyStartedException
+//    override fun onCreate() {
+//        super.onCreate()
+//
+//        // Start Koin
+//        startKoin {
+//            // Declare used Android context
+//            androidContext(this@DebugIdagioApplication)
+//            // Declare modules
+//            modules(networkTrackerModule, CORE_MODULE)
+//        }
+//    }
 }

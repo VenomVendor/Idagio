@@ -28,6 +28,7 @@ def version = [
         constraintlayout : '1.1.3',
         glide            : '4.9.0',
         gson             : '2.8.5',
+        koin             : '2.0.0-GA',
         ktx              : '1.0.2',
         lifecycle        : '2.0.0',
         material         : '1.0.0-rc01',
@@ -104,6 +105,11 @@ def app = [
                 // Reactive
                 rxAndroid    : "io.reactivex.rxjava2:rxandroid:${version.rxAndroid}",
                 rxJava       : "io.reactivex.rxjava2:rxjava:${version.rxJava}",
+
+                // Dependency Injection
+                koin         : "org.koin:koin-android:${version.koin}",
+                koinScope    : "org.koin:koin-androidx-scope:${version.koin}",
+                koinViewmodel: "org.koin:koin-androidx-viewmodel:${version.koin}",
 
                 // Image Renderer
                 glide        : "com.github.bumptech.glide:glide:${version.glide}",
