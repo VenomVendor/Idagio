@@ -6,9 +6,6 @@
 package com.venomvendor.idagio.app.core
 
 import android.app.Application
-import com.venomvendor.idagio.core.di.coreModule
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
 
 /**
  * Application class for core functionality.
@@ -17,12 +14,5 @@ open class IdagioApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        // start Koin
-        startKoin {
-            // Declare used Android context
-            androidContext(this@IdagioApplication)
-            // Declare modules
-            modules(coreModule)
-        }
     }
 }
