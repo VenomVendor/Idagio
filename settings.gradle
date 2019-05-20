@@ -1,1 +1,4 @@
-include ':app'
+rootProject.name = 'IDAGIO'
+
+include ':demo'
+project(':demo').projectDir = new File(settingsDir, 'app')

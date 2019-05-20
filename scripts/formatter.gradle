@@ -1,0 +1,45 @@
+/*
+ * Code Formatter, formatter for Java, Kotlin, Json, Gradle and others
+ * Available tasks `spotlessCheck`, `spotlessApply`
+ */
+apply plugin: 'com.diffplug.gradle.spotless'
+
+spotless {
+    format 'misc', {
+        target '**/*.gradle', '**/*.md', '**/.gitignore'
+
+        indentWithSpaces()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+
+    format 'json', {
+        target '**/*.json'
+        indentWithSpaces(2)
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+
+    kotlin {
+        target '**/*.kt'
+        ktlint(deps.version.ktLint)
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+
+    java {
+        target '**/*.java'
+        removeUnusedImports()
+        indentWithSpaces()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}
+
+afterEvaluate {
+    tasks.find {
+        it.name.contains('compile')
+    }.each {
+        it.dependsOn spotlessCheck
+    }
+}
