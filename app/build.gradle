@@ -7,6 +7,8 @@ apply plugin: 'androidx.navigation.safeargs.kotlin'
 android.defaultConfig.applicationId deps.buildConfig.applicationId
 
 dependencies {
+    implementation project(':core')
+
     // AndroidX
     implementation deps.jetpack.appcompat
     implementation deps.jetpack.constraintlayout
@@ -18,6 +20,9 @@ dependencies {
 
     // Image Renderer
     implementation deps.app.glide
+
+    // Dependency Injection
+    implementation deps.app.koinViewmodel
 
     // Annotation Processors
     kapt deps.kapt.lifecycle

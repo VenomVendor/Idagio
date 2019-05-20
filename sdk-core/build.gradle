@@ -19,6 +19,7 @@ dependencies {
 
     // Dependency Injection
     api deps.app.koin
+    api deps.app.koinScope
 }
 
 /**
