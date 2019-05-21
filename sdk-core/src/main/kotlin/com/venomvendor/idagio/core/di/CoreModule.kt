@@ -11,14 +11,22 @@ import com.venomvendor.gson.NullDefenseTypeAdapterFactory
 import com.venomvendor.idagio.core.annotation.Mandatory
 import com.venomvendor.idagio.core.data.RepositoryManager
 import com.venomvendor.idagio.core.data.factory.Repository
+import com.venomvendor.idagio.core.helper.CoreConstant.Companion.QUALIFIER_BASE_URL
 import okhttp3.OkHttpClient
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
+import retrofit2.CallAdapter
+import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
+private const val BASE_URL = "https://api.idagio.com/v1.8/lucene/"
+
+/**
+ * Provides all dependencies in current core module.
+ */
 val coreModule = module {
-    val baseUrl = "https://api.idagio.com/v1.8/lucene"
 
     /**
      * Provides [Gson] to generate objects from Json.
@@ -37,7 +45,7 @@ val coreModule = module {
      * Provides [Gson] to generate objects from Json.
      */
     factory {
-        GsonConverterFactory.create(get())
+        GsonConverterFactory.create(get()) as Converter.Factory
     }
 
     /**
@@ -51,7 +59,7 @@ val coreModule = module {
      * Provides [RxJava2CallAdapterFactory] to create network response to Reactive streams.
      */
     factory {
-        RxJava2CallAdapterFactory.create()
+        RxJava2CallAdapterFactory.create() as CallAdapter.Factory
     }
 
     /**
@@ -63,11 +71,18 @@ val coreModule = module {
     }
 
     /**
+     * Provides Instance of networking client's base url
+     */
+    single(named(QUALIFIER_BASE_URL)) {
+        BASE_URL
+    }
+
+    /**
      * Provides Instance of networking client.
      */
     single {
         Retrofit.Builder()
-            .baseUrl(baseUrl)
+            .baseUrl(get<String>(named(QUALIFIER_BASE_URL)))
             .addConverterFactory(get())
             .addCallAdapterFactory(get())
             .client(get())

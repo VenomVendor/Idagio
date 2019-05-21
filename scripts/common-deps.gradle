@@ -10,4 +10,7 @@ dependencies {
 
     // Model Validator
     testImplementation deps.test.openpojo
+
+    // Koin DI
+    testImplementation deps.test.koinTest
 }
