@@ -47,10 +47,12 @@ def version = [
 
         /* ANDROID TEST */
         androidTestRunner: '1.1.1',
-        coreTest         : '1.2.0-beta01',
+        androidTestRules : '1.1.1',
+        coreTest         : '1.1.0',
         jUnitExt         : '1.1.0',
         espresso         : '3.1.1',
         fragmentTesting  : '1.1.0-alpha07',
+        mockwebserver    : '3.12.0',
 ]
 
 // Semantic versioning
@@ -69,7 +71,7 @@ def build = [
                 versionName              : version.versionName,
 
                 applicationId            : 'com.venomvendor.idagio',
-                testInstrumentationRunner: 'androidx.test.runner.AndroidJUnitRunner',
+                testInstrumentationRunner: 'com.venomvendor.idagio.helper.IdagioTestRunner',
         ],
 
         plugin: [
@@ -170,6 +172,8 @@ def test = [
                 fragmentTesting: "androidx.fragment:fragment-testing:${version.fragmentTesting}",
                 jUnitExt       : "androidx.test.ext:junit:${version.jUnitExt}",
                 runner         : "androidx.test:runner:${version.androidTestRunner}",
+                rules          : "androidx.test:rules:${version.androidTestRules}",
+                mockwebserver  : "com.squareup.okhttp3:mockwebserver:${version.mockwebserver}",
         ]
 ]
 

@@ -36,6 +36,7 @@ dependencies {
  */
 dependencies {
     androidTestImplementation deps.androidTest.runner
+    androidTestImplementation deps.androidTest.rules
     androidTestImplementation deps.androidTest.jUnitExt
     androidTestImplementation deps.androidTest.coreTest
 
@@ -43,8 +44,15 @@ dependencies {
     androidTestImplementation deps.androidTest.espresso
     androidTestImplementation deps.androidTest.espressoContrib
 
+    androidTestImplementation deps.androidTest.mockwebserver
+
     // Debug Only
     debugImplementation deps.androidTest.fragmentTesting
+
+    // Koin DI
+    androidTestImplementation deps.app.koin
+    androidTestImplementation deps.app.koinScope
+    androidTestImplementation deps.test.koinTest
 }
 
 /*

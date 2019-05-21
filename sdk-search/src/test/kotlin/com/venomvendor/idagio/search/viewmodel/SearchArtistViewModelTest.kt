@@ -52,9 +52,7 @@ class SearchArtistViewModelTest : BaseTest() {
 
     @Test
     fun `getArtists With Error`() {
-        val response: String = with(this).read("error.json")
         val mockRepository = Mockito.mock(SearchRepository::class.java)
-        val searchObj = get<Gson>().fromJson<SearchArtist>(response, SearchArtist::class.java)
 
         mockitoWhen(mockRepository.searchArtists(Mockito.anyString()))
             .thenReturn(
