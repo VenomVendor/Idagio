@@ -34,7 +34,13 @@ class SearchRepository(
             return search.searchArtists(query)
                 .doOnSuccess {
                     if (!it.isSuccess) {
+                        // TODO: Wrap in nice exception
                         throw RuntimeException(it.message)
+                    }
+                    // TODO: Wrap in nice exception
+                    if (it.artist == null || it.artist.people == null) {
+                        // Pending localize
+                        throw RuntimeException("""No Artists Found for "$query"""")
                     }
                 }
                 .map {

@@ -27,6 +27,8 @@ dependencies {
     // Annotation Processors
     kapt deps.kapt.lifecycle
     kapt deps.kapt.glide
+
+    implementation deps.androidTest.espressoIdling
 }
 
 /*

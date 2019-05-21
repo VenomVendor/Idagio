@@ -166,6 +166,7 @@ def test = [
                 coreTest       : "androidx.test:core:${version.coreTest}",
                 espresso       : "androidx.test.espresso:espresso-core:${version.espresso}",
                 espressoContrib: "androidx.test.espresso:espresso-contrib:${version.espresso}",
+                espressoIdling : "androidx.test.espresso:espresso-idling-resource:${version.espresso}",
                 fragmentTesting: "androidx.fragment:fragment-testing:${version.fragmentTesting}",
                 jUnitExt       : "androidx.test.ext:junit:${version.jUnitExt}",
                 runner         : "androidx.test:runner:${version.androidTestRunner}",
