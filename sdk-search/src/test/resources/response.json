@@ -1,0 +1,58 @@
+{
+  "artists": {
+    "persons": [
+      {
+        "id": 61230,
+        "forename": "Carl Philipp Emanuel",
+        "surname": "Bach",
+        "name": "Carl Philipp Emanuel Bach",
+        "functions": [
+          "composer"
+        ],
+        "popularity": 0.03202598652550529,
+        "score": 20003.203,
+        "kind": "person",
+        "matchedQueries": []
+      },
+      {
+        "id": 61508,
+        "forename": "Johann Christian",
+        "surname": "Bach",
+        "name": "Johann Christian Bach",
+        "functions": [
+          "composer"
+        ],
+        "popularity": 0.004451395572666025,
+        "score": 20000.445,
+        "kind": "person",
+        "matchedQueries": []
+      },
+      {
+        "id": 62444,
+        "forename": "Wilhelm Friedemann",
+        "surname": "Bach",
+        "name": "Wilhelm Friedemann Bach",
+        "functions": [
+          "composer"
+        ],
+        "popularity": 0.004307025986525505,
+        "score": 20000.432,
+        "kind": "person",
+        "matchedQueries": []
+      },
+      {
+        "id": 15549874,
+        "forename": "Franz",
+        "surname": "Bach",
+        "name": "Franz Bach",
+        "functions": [
+          "soloist"
+        ],
+        "popularity": 0.003501846428116643,
+        "score": 20000.35,
+        "kind": "person",
+        "matchedQueries": []
+      }
+    ]
+  }
+}

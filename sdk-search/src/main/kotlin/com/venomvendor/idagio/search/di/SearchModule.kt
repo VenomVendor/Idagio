@@ -16,7 +16,7 @@ import org.koin.dsl.module
 val searchModule = module {
 
     factory {
-        SearchArtistViewModel()
+        SearchArtistViewModel(get())
     }
 
     factory {

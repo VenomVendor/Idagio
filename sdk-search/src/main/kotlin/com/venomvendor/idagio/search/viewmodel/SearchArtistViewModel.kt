@@ -11,11 +11,10 @@ import com.venomvendor.idagio.search.model.Person
 import com.venomvendor.idagio.search.repository.SearchRepository
 import io.reactivex.Single
 import org.koin.core.KoinComponent
-import org.koin.core.get
 
-class SearchArtistViewModel : ViewModel(), KoinComponent {
-
-    private val searchRepository: SearchRepository = get()
+class SearchArtistViewModel(
+    private val searchRepository: SearchRepository
+) : ViewModel(), KoinComponent {
 
     /* Create Repository that acts as single source of data */
 //    private val randomUserViewModel: RandomUserViewModel by viewModel()

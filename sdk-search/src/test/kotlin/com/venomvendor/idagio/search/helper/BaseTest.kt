@@ -1,9 +1,9 @@
 /*
  * Copyright (c) 2019 VenomVendor. All rights reserved.
- * Created by VenomVendor on 20-May-2019.
+ * Created by VenomVendor on 21-May-2019.
  */
 
-package com.venomvendor.idagio.core.helper
+package com.venomvendor.idagio.search.helper
 
 import androidx.annotation.CallSuper
 import io.reactivex.plugins.RxJavaPlugins
