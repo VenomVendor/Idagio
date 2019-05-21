@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+
+apply from: "$rootProject.rootDir/scripts/root.gradle"
+
+/**
+ * Module Dependencies
+ */
+dependencies {
+    // Json Parser
+    implementation deps.app.nullDefense
+
+    // Networking
+    implementation deps.app.okHttp
+    implementation deps.app.retrofit
+    implementation deps.app.retrofitGson
+    implementation deps.app.retrofitRx
+
+    debugImplementation deps.debug.okHttpLog
+}
+
+/**
+ * Module Dependencies
+ */
+dependencies {
+    // Json Parser
+    testImplementation deps.app.gson
+    testImplementation deps.app.nullDefense
+
+    // Networking
+    testImplementation deps.app.okHttp
+    testImplementation deps.app.retrofit
+    testImplementation deps.app.retrofitGson
+    testImplementation deps.app.retrofitRx
+}

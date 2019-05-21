@@ -1,0 +1,94 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion deps.buildConfig.compileSdk
+    buildToolsVersion deps.buildConfig.buildTools
+
+    androidExtensions {
+        experimental = true
+    }
+    defaultConfig {
+        minSdkVersion deps.buildConfig.minSdk
+        targetSdkVersion deps.buildConfig.targetSdk
+        versionCode deps.buildConfig.versionCode
+        versionName deps.buildConfig.versionName
+
+        testInstrumentationRunner deps.buildConfig.testInstrumentationRunner
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            testCoverageEnabled Boolean.valueOf(project.findProperty('enableCodeCoverage'))
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+    testOptions {
+        animationsDisabled = true
+        unitTests {
+            all {
+                testLogging {
+                    exceptionFormat = 'full'
+                    events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+                }
+            }
+            returnDefaultValues = true
+            includeAndroidResources = true
+        }
+    }
+    sourceSets {
+        main {
+            java {
+                srcDir 'src/main/kotlin'
+            }
+        }
+        debug {
+            java {
+                srcDir 'src/debug/kotlin'
+            }
+        }
+        test {
+            java {
+                srcDir 'src/test/kotlin'
+            }
+            resources.srcDirs += ['src/test/resources']
+        }
+        androidTest {
+            java {
+                srcDir 'src/androidTest/kotlin'
+            }
+            resources.srcDirs += ['src/androidTest/resources']
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.md'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.md'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE-notice.md'
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/MANIFEST.MF'
+        exclude '**/rxjava.properties'
+        exclude '.readme'
+        return true
+    }
+    useLibrary 'android.test.runner'
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
+}
+
+apply from: "$rootProject.rootDir/scripts/common-deps.gradle"
+apply from: "$rootProject.rootDir/scripts/jacoco.gradle"

@@ -1,0 +1,9 @@
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = deps.version.jacoco
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+}

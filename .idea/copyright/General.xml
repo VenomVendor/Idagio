@@ -1,0 +1,6 @@
+<component name="CopyrightManager">
+  <copyright>
+    <option name="notice" value="#set( &amp;#36;date-format = &quot;dd-MMM-yyyy&quot;)&#10;Copyright (c) &amp;#36;today.year VenomVendor. All rights reserved.&#10;Created by VenomVendor on &amp;#36;today.format(&amp;#36;date-format)." />
+    <option name="myName" value="General" />
+  </copyright>
+</component>

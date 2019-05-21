@@ -1,0 +1,39 @@
+/**
+ * API dependencies
+ */
+dependencies {
+    // Kotlin
+    implementation deps.app.kotlin
+    implementation deps.app.kotlinReflect
+
+    // Rx
+    implementation deps.app.rxAndroid
+    implementation deps.app.rxJava
+
+    // AndroidX
+    implementation deps.jetpack.annotation
+
+    // Dependency Injection
+    implementation deps.app.koin
+    implementation deps.app.koinScope
+
+    // Json Parser
+    implementation deps.app.gson
+}
+
+/*
+ * Test Dependencies
+ */
+dependencies {
+    // Unit
+    testImplementation deps.test.jUnit4
+
+    // Mockito
+    testImplementation deps.test.mockito
+
+    // Model Validator
+    testImplementation deps.test.openpojo
+
+    // Koin DI
+    testImplementation deps.test.koinTest
+}

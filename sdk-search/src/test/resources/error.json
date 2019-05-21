@@ -1,0 +1,5 @@
+{
+  "statusCode": 400,
+  "error": "Bad Request",
+  "message": "Invalid request query input"
+}

@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+apply from: "$rootProject.rootDir/scripts/root.gradle"
+
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android.defaultConfig.applicationId deps.buildConfig.applicationId
+
+dependencies {
+    implementation project(':search')
+
+    // AndroidX
+    implementation deps.jetpack.appcompat
+    implementation deps.jetpack.constraintlayout
+    implementation deps.jetpack.ktx
+    implementation deps.jetpack.material
+    implementation deps.jetpack.navigationFragment
+    implementation deps.jetpack.navigationUi
+    implementation deps.jetpack.viewmodel
+
+    // Image Renderer
+    implementation deps.app.glide
+
+    // Dependency Injection
+    implementation deps.app.koinViewmodel
+
+    // Annotation Processors
+    kapt deps.kapt.lifecycle
+    kapt deps.kapt.glide
+
+    implementation deps.androidTest.espressoIdling
+}
+
+/*
+ * Android Test Dependencies
+ */
+dependencies {
+    androidTestImplementation deps.androidTest.runner
+    androidTestImplementation deps.androidTest.rules
+    androidTestImplementation deps.androidTest.jUnitExt
+    androidTestImplementation deps.androidTest.coreTest
+
+    // Espresso
+    androidTestImplementation deps.androidTest.espresso
+    androidTestImplementation deps.androidTest.espressoContrib
+
+    androidTestImplementation deps.androidTest.mockwebserver
+
+    // Debug Only
+    debugImplementation deps.androidTest.fragmentTesting
+
+    // Koin DI
+    androidTestImplementation deps.app.koin
+    androidTestImplementation deps.app.koinScope
+    androidTestImplementation deps.test.koinTest
+}
+
+/*
+ * Debug Dependencies
+ */
+dependencies {
+    debugImplementation deps.debug.chuck
+    debugImplementation deps.debug.stetho
+}

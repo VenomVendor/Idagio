@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/artist_list_fragment">
+
+    <fragment
+        android:id="@+id/artist_list_fragment"
+        android:name="com.venomvendor.idagio.app.ui.ArtistListFragment"
+        android:label="artist_list_fragment">
+        <action android:id="@+id/action_artist_list_fragment_to_artist_detail_fragment" />
+    </fragment>
+</navigation>
