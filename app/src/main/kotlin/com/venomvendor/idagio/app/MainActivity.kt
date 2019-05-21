@@ -5,14 +5,24 @@
 
 package com.venomvendor.idagio.app
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import androidx.annotation.LayoutRes
+import androidx.navigation.fragment.NavHostFragment
 import com.venomvendor.idagio.R
+import com.venomvendor.idagio.app.common.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
+    @LayoutRes
+    // Return current layout
+    override val layout = R.layout.activity_main
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun initViews() {
+        // Get Navigation Graph
+        val host = NavHostFragment.create(R.navigation.nav_graph)
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.frame, host)
+            .setPrimaryNavigationFragment(host)
+            .commit()
     }
 }
