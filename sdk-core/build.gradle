@@ -3,31 +3,10 @@ apply plugin: 'com.android.library'
 apply from: "$rootProject.rootDir/scripts/root.gradle"
 
 /**
- * API dependencies
- */
-dependencies {
-    // Kotlin
-    api deps.app.kotlin
-    api deps.app.kotlinReflect
-
-    // Rx
-    api deps.app.rxAndroid
-    api deps.app.rxJava
-
-    // AndroidX
-    api deps.jetpack.annotation
-
-    // Dependency Injection
-    api deps.app.koin
-    api deps.app.koinScope
-}
-
-/**
  * Module Dependencies
  */
 dependencies {
     // Json Parser
-    implementation deps.app.gson
     implementation deps.app.nullDefense
 
     // Networking
@@ -35,6 +14,8 @@ dependencies {
     implementation deps.app.retrofit
     implementation deps.app.retrofitGson
     implementation deps.app.retrofitRx
+
+    debugImplementation deps.debug.okHttpLog
 }
 
 /**

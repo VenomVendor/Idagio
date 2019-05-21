@@ -14,6 +14,7 @@ import com.venomvendor.idagio.core.data.factory.Repository
 import com.venomvendor.idagio.core.helper.CoreConstant.Companion.QUALIFIER_BASE_URL
 import com.venomvendor.idagio.core.helper.CoreConstant.Companion.QUALIFIER_ROOM
 import com.venomvendor.idagio.core.helper.CoreConstant.Companion.QUALIFIER_SHARED_PREF
+import com.venomvendor.idagio.core.network.NetworkManager
 import com.venomvendor.idagio.core.storage.RoomManager
 import com.venomvendor.idagio.core.storage.SharedPreferencesManager
 import com.venomvendor.idagio.core.storage.factory.Storage
@@ -26,7 +27,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-private const val BASE_URL = "https://api.idagio.com/v1.8/lucene/"
+private const val BASE_URL = "https://api.idagio.com/"
 
 /**
  * Provides all dependencies in current core module.
@@ -106,6 +107,13 @@ val coreModule = module {
      */
     factory(named(QUALIFIER_SHARED_PREF)) {
         SharedPreferencesManager() as Storage
+    }
+
+    /**
+     * Provider Network Manager
+     */
+    factory {
+        NetworkManager()
     }
 
     /**

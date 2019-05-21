@@ -5,3 +5,6 @@ project(':demo').projectDir = new File(settingsDir, 'app')
 
 include ':core'
 project(':core').projectDir = new File(settingsDir, 'sdk-core')
+
+include ':search'
+project(':search').projectDir = new File(settingsDir, 'sdk-search')

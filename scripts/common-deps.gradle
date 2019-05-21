@@ -1,3 +1,26 @@
+/**
+ * API dependencies
+ */
+dependencies {
+    // Kotlin
+    implementation deps.app.kotlin
+    implementation deps.app.kotlinReflect
+
+    // Rx
+    implementation deps.app.rxAndroid
+    implementation deps.app.rxJava
+
+    // AndroidX
+    implementation deps.jetpack.annotation
+
+    // Dependency Injection
+    implementation deps.app.koin
+    implementation deps.app.koinScope
+
+    // Json Parser
+    implementation deps.app.gson
+}
+
 /*
  * Test Dependencies
  */

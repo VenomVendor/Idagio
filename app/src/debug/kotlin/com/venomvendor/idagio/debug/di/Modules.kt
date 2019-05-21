@@ -14,6 +14,7 @@ import org.koin.dsl.module
  * Debug module that tracks all API calls.
  */
 val networkTrackerModule = module {
+
     /**
      * Provides Chuck Interceptor which attaches with [okhttp3] interceptors.
      */

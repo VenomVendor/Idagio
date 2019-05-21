@@ -7,6 +7,7 @@ package com.venomvendor.idagio.app.core
 
 import android.app.Application
 import com.venomvendor.idagio.core.di.coreModule
+import com.venomvendor.idagio.search.di.searchModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -22,7 +23,7 @@ open class IdagioApplication : Application() {
             // Declare used Android context
             androidContext(this@IdagioApplication)
             // Declare modules
-            modules(coreModule)
+            modules(coreModule, searchModule)
         }
     }
 }

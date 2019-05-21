@@ -8,6 +8,8 @@
 package com.venomvendor.idagio.app.core
 
 import android.annotation.SuppressLint
+import com.facebook.stetho.Stetho
+import com.venomvendor.idagio.core.di.coreDebugModule
 import com.venomvendor.idagio.debug.di.networkTrackerModule
 import org.koin.core.context.loadKoinModules
 
@@ -20,6 +22,8 @@ class DebugIdagioApplication : IdagioApplication() {
     override fun onCreate() {
         super.onCreate()
 
-        loadKoinModules(networkTrackerModule)
+        Stetho.initializeWithDefaults(this)
+
+        loadKoinModules(networkTrackerModule, coreDebugModule)
     }
 }

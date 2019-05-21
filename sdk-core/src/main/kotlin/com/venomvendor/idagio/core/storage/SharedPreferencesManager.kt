@@ -12,7 +12,7 @@ import com.venomvendor.idagio.core.storage.factory.Storage
  */
 class SharedPreferencesManager : Storage {
     override fun <E> save(data: E) {
-        TODO("not implemented")
+        // TODO("not implemented")
     }
 
     override fun <E> update(data: E) {
@@ -23,7 +23,7 @@ class SharedPreferencesManager : Storage {
         TODO("not implemented")
     }
 
-    override fun <T> retrieve(clz: T): List<T> {
-        TODO("not implemented")
+    override fun <T> retrieve(clz: Class<T>): List<T>? {
+        return null
     }
 }
