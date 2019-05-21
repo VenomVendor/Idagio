@@ -12,6 +12,11 @@ import com.venomvendor.idagio.core.annotation.Mandatory
 import com.venomvendor.idagio.core.data.RepositoryManager
 import com.venomvendor.idagio.core.data.factory.Repository
 import com.venomvendor.idagio.core.helper.CoreConstant.Companion.QUALIFIER_BASE_URL
+import com.venomvendor.idagio.core.helper.CoreConstant.Companion.QUALIFIER_ROOM
+import com.venomvendor.idagio.core.helper.CoreConstant.Companion.QUALIFIER_SHARED_PREF
+import com.venomvendor.idagio.core.storage.RoomManager
+import com.venomvendor.idagio.core.storage.SharedPreferencesManager
+import com.venomvendor.idagio.core.storage.factory.Storage
 import okhttp3.OkHttpClient
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -94,5 +99,19 @@ val coreModule = module {
      */
     factory { (repository: Repository<*>) ->
         RepositoryManager(repository)
+    }
+
+    /**
+     * Provides Shared Preferences
+     */
+    factory(named(QUALIFIER_SHARED_PREF)) {
+        SharedPreferencesManager() as Storage
+    }
+
+    /**
+     * Provides Room/SQLite
+     */
+    single(named(QUALIFIER_ROOM)) {
+        RoomManager() as Storage
     }
 }

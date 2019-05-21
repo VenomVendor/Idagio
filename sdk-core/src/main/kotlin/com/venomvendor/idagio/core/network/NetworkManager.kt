@@ -7,9 +7,15 @@ package com.venomvendor.idagio.core.network
 
 import retrofit2.Retrofit
 
+/**
+ * Handles Network Operation
+ */
 class NetworkManager {
 
-    inline fun <reified T> createWebService(retrofit: Retrofit): T {
+    /**
+     * Creates Webservice client for the given provider.
+     */
+    inline fun <reified T> getWebService(retrofit: Retrofit): T {
         return retrofit.create(T::class.java)
     }
 }
