@@ -1,20 +1,15 @@
 apply plugin: 'com.android.application'
 
-apply from: "$project.rootDir/scripts/root.gradle"
+apply from: "$rootProject.rootDir/scripts/root.gradle"
+
+apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android.defaultConfig.applicationId deps.buildConfig.applicationId
 
 dependencies {
-    // Kotlin
-    implementation deps.app.kotlin
-    implementation deps.app.kotlinReflect
-
-    // Rx
-    implementation deps.app.rxAndroid
-    implementation deps.app.rxJava
+    implementation project(':core')
 
     // AndroidX
-    implementation deps.jetpack.annotation
     implementation deps.jetpack.appcompat
     implementation deps.jetpack.constraintlayout
     implementation deps.jetpack.ktx
@@ -23,39 +18,15 @@ dependencies {
     implementation deps.jetpack.navigationUi
     implementation deps.jetpack.viewmodel
 
-    // Dependency Injection
-    implementation deps.app.koin
-
     // Image Renderer
     implementation deps.app.glide
 
-    // Json Parser
-    implementation deps.app.gson
-
-    // Networking
-    implementation deps.app.nullDefense
-    implementation deps.app.okHttp
-    implementation deps.app.retrofit
-    implementation deps.app.retrofitGson
-    implementation deps.app.retrofitRx
+    // Dependency Injection
+    implementation deps.app.koinViewmodel
 
     // Annotation Processors
     kapt deps.kapt.lifecycle
     kapt deps.kapt.glide
-}
-
-/*
- * Test Dependencies
- */
-dependencies {
-    // Unit
-    testImplementation deps.test.jUnit4
-
-    // Mockito
-    testImplementation deps.test.mockito
-
-    // Model Validator
-    testImplementation deps.test.openpojo
 }
 
 /*

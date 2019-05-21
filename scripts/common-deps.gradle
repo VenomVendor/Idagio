@@ -1,0 +1,16 @@
+/*
+ * Test Dependencies
+ */
+dependencies {
+    // Unit
+    testImplementation deps.test.jUnit4
+
+    // Mockito
+    testImplementation deps.test.mockito
+
+    // Model Validator
+    testImplementation deps.test.openpojo
+
+    // Koin DI
+    testImplementation deps.test.koinTest
+}

@@ -1,40 +1,40 @@
 def version = [
-        buildTools      : '3.4.1',
-        jacoco          : '0.8.4',
-        kotlin          : '1.3.31',
-        ktLint          : '0.30.0',
-        spotless        : '3.18.0',
+        buildTools       : '3.4.1',
+        jacoco           : '0.8.4',
+        kotlin           : '1.3.31',
+        ktLint           : '0.30.0',
+        spotless         : '3.18.0',
 
         /* CONFIG */
-        appBuildTools   : '29.0.0-rc3',
-        minSdk          : 21,
-        compileSdk      : 'android-Q',
-        targetSdk       : 29,
+        appBuildTools    : '29.0.0-rc3',
+        minSdk           : 21,
+        compileSdk       : 'android-Q',
+        targetSdk        : 29,
 
-        versionCode     : 1,
+        versionCode      : 1,
 
-        MAJOR           : 1,
-        MINOR           : 0,
-        PATCH           : 0,
-        SUFFIX          : '-beta',
+        MAJOR            : 1,
+        MINOR            : 0,
+        PATCH            : 0,
+        SUFFIX           : '-beta',
 
         // Place holder
-        versionName     : 'x.y.z',
+        versionName      : 'x.y.z',
 
         /* APP */
-        annotation      : '1.1.0-rc01',
-        appcompat       : '1.1.0-alpha05',
-        chuck           : '1.1.0',
-        constraintlayout: '1.1.3',
-        glide           : '4.9.0',
-        gson            : '2.8.5',
-        koin            : '2.0.0-GA',
+        annotation       : '1.1.0-rc01',
+        appcompat        : '1.1.0-alpha05',
+        chuck            : '1.1.0',
+        constraintlayout : '1.1.3',
+        glide            : '4.9.0',
+        gson             : '2.8.5',
+        koin             : '2.0.0-GA',
         ktx              : '1.0.2',
         lifecycle        : '2.0.0',
         material         : '1.0.0-rc01',
         navigation       : '2.0.0',
         nullDefense      : '2.0.0',
-        okHttp           : '4.0.0-alpha01',
+        okHttp           : '3.14.1',
         retrofit         : '2.5.0',
         rxAndroid        : '2.1.1',
         rxJava           : '2.2.8',
@@ -107,7 +107,9 @@ def app = [
                 rxJava       : "io.reactivex.rxjava2:rxjava:${version.rxJava}",
 
                 // Dependency Injection
-                koin         : "org.koin:koin-androidx-viewmodel:${version.koin}",
+                koin         : "org.koin:koin-android:${version.koin}",
+                koinScope    : "org.koin:koin-androidx-scope:${version.koin}",
+                koinViewmodel: "org.koin:koin-androidx-viewmodel:${version.koin}",
 
                 // Image Renderer
                 glide        : "com.github.bumptech.glide:glide:${version.glide}",
@@ -153,6 +155,7 @@ def test = [
                 jUnit4  : "junit:junit:${version.jUnit4}",
                 mockito : "org.mockito:mockito-core:${version.mockito}",
                 openpojo: "com.openpojo:openpojo:${version.openpojo}",
+                koinTest: "org.koin:koin-test:${version.koin}",
         ],
 
         /* Android Test */

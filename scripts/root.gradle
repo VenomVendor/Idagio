@@ -1,7 +1,6 @@
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
     compileSdkVersion deps.buildConfig.compileSdk
@@ -91,4 +90,5 @@ android {
     useLibrary 'android.test.mock'
 }
 
+apply from: "$rootProject.rootDir/scripts/common-deps.gradle"
 apply from: "$rootProject.rootDir/scripts/jacoco.gradle"
