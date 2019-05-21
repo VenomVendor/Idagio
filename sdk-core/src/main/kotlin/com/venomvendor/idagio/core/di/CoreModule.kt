@@ -59,24 +59,25 @@ val coreModule = module {
      */
     single {
         OkHttpClient().newBuilder()
-//            TODO: Fix this.
-//            .addInterceptor(get<Interceptor>())
             .build()
-    }
-
-    factory { (repository: Repository<*>) ->
-        RepositoryManager(repository)
     }
 
     /**
      * Provides Instance of networking client.
      */
-    factory {
+    single {
         Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(get())
             .addCallAdapterFactory(get())
             .client(get())
             .build()
+    }
+
+    /**
+     * Creates Repository Manager for the given repository
+     */
+    factory { (repository: Repository<*>) ->
+        RepositoryManager(repository)
     }
 }
