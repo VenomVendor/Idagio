@@ -28,5 +28,5 @@ interface Storage {
     /**
      * Retrieve data from storage
      */
-    fun <T> retrieve(clz: T): List<T>
+    fun <T> retrieve(clz: Class<T>): List<T>?
 }

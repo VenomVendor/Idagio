@@ -7,7 +7,7 @@ apply plugin: 'androidx.navigation.safeargs.kotlin'
 android.defaultConfig.applicationId deps.buildConfig.applicationId
 
 dependencies {
-    implementation project(':core')
+    implementation project(':search')
 
     // AndroidX
     implementation deps.jetpack.appcompat
@@ -50,4 +50,5 @@ dependencies {
  */
 dependencies {
     debugImplementation deps.debug.chuck
+    debugImplementation deps.debug.stetho
 }

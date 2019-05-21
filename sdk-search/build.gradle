@@ -1,0 +1,33 @@
+apply plugin: 'com.android.library'
+
+apply from: "$rootProject.rootDir/scripts/root.gradle"
+
+/**
+ * API dependencies
+ */
+dependencies {
+    api project(':core')
+
+    // Dependency Injection
+    implementation deps.app.koin
+    implementation deps.app.koinScope
+    implementation deps.app.koinViewmodel
+
+    implementation deps.jetpack.viewmodel
+}
+
+/**
+ * Module Dependencies
+ */
+dependencies {
+    // Networking
+    implementation deps.app.retrofit
+}
+
+/**
+ * Module Dependencies
+ */
+dependencies {
+    // Networking
+    testImplementation deps.app.retrofit
+}
